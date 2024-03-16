@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Panel } from "@/app/interface/panel"
-import { pick } from "@/lib/pick"
-import { Grid } from "@/app/interface/grid"
-import { LayoutProps } from "@/types"
+import { Panel } from "@/app/interface/panel";
+import { pick } from "@/lib/pick";
+import { Grid } from "@/app/interface/grid";
+import { LayoutProps } from "@/types";
 
 export function Layout0({ page, nbPanels }: LayoutProps) {
   return (
@@ -45,7 +45,7 @@ export function Layout0({ page, nbPanels }: LayoutProps) {
         />
       </div>
     </Grid>
-  )
+  );
 }
 
 export function Layout1({ page, nbPanels }: LayoutProps) {
@@ -88,7 +88,7 @@ export function Layout1({ page, nbPanels }: LayoutProps) {
         />
       </div>
     </Grid>
-  )
+  );
 }
 
 export function Layout2_todo({ page, nbPanels }: LayoutProps) {
@@ -131,7 +131,7 @@ export function Layout2_todo({ page, nbPanels }: LayoutProps) {
         />
       </div>
     </Grid>
-  )
+  );
 }
 
 export function Layout3_todo({ page, nbPanels }: LayoutProps) {
@@ -176,7 +176,7 @@ export function Layout3_todo({ page, nbPanels }: LayoutProps) {
         </div>
       </div>
     </Grid>
-  )
+  );
 }
 
 export function Layout4_todo({ page, nbPanels }: LayoutProps) {
@@ -219,9 +219,8 @@ export function Layout4_todo({ page, nbPanels }: LayoutProps) {
         />
       </div>
     </Grid>
-  )
+  );
 }
-
 
 export function Layout2({ page, nbPanels }: LayoutProps) {
   return (
@@ -263,7 +262,7 @@ export function Layout2({ page, nbPanels }: LayoutProps) {
         />
       </div>
     </Grid>
-  )
+  );
 }
 
 export function Layout3({ page, nbPanels }: LayoutProps) {
@@ -306,7 +305,7 @@ export function Layout3({ page, nbPanels }: LayoutProps) {
         />
       </div>
     </Grid>
-  )
+  );
 }
 
 // squares + vertical
@@ -350,7 +349,7 @@ export function Layout4({ page, nbPanels }: LayoutProps) {
         />
       </div>
     </Grid>
-  )
+  );
 }
 
 // squares + horizontal
@@ -394,7 +393,7 @@ export function Layout5({ page, nbPanels }: LayoutProps) {
         />
       </div>
     </Grid>
-  )
+  );
 }
 
 // export const layouts = { Layout1, Layout2_todo, Layout3_todo, Layout4_todo, Layout2, Layout3 }
@@ -404,8 +403,8 @@ export const allLayouts = {
   Layout1,
   Layout2,
   Layout3,
-  Layout4
-}
+  Layout4,
+};
 
 export const allLayoutLabels = {
   random: "Random layout",
@@ -413,8 +412,8 @@ export const allLayoutLabels = {
   Layout1: "Grid 1",
   Layout2: "Grid 2",
   Layout3: "Grid 3",
-  // Layout4: "Blocks 1",
-}
+  Layout4: "Blocks 1",
+};
 
 // note for reference: A4 (297mm x 210mm)
 export const allLayoutAspectRatios = {
@@ -423,20 +422,22 @@ export const allLayoutAspectRatios = {
   Layout2: "aspect-[250/297]",
   Layout3: "aspect-[250/297]",
   // Layout4: "aspect-[1/3]",
-}
+};
 
-export type LayoutName = keyof typeof allLayouts 
+export type LayoutName = keyof typeof allLayouts;
 
-export const defaultLayout: LayoutName = "Layout1"
+export const defaultLayout: LayoutName = "Layout1";
 
-export type LayoutCategory = "square" | "fluid"
+export type LayoutCategory = "square" | "fluid";
 
-export const nonRandomLayouts = Object.keys(allLayouts).filter(layout => layout !== "random")
+export const nonRandomLayouts = Object.keys(allLayouts).filter(
+  (layout) => layout !== "random"
+);
 
 export const getRandomLayoutName = (): LayoutName => {
-  return pick(nonRandomLayouts) as LayoutName
-}
+  return pick(nonRandomLayouts) as LayoutName;
+};
 
 export function getRandomLayoutNames(): LayoutName[] {
-  return nonRandomLayouts.sort(() => Math.random() - 0.5) as LayoutName[]
+  return nonRandomLayouts.sort(() => Math.random() - 0.5) as LayoutName[];
 }
